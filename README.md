@@ -2,6 +2,9 @@
 
 Simulación de una aplicación web de un banco
 
+
+![](https://imgur.com/a/aMThTBr)
+
 ## Tabla de Contenidos
 
 1. [Introducción](#introducción)

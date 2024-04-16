@@ -3,7 +3,14 @@
 Simulación de una aplicación web de un banco
 
 
-![](https://imgur.com/a/aMThTBr)
+![](https://pasteboard.co/aFPw6ixC2luI.png)
+![](https://pasteboard.co/x53ZSc5WrMeJ.png)
+![](https://pasteboard.co/SDeZfxCzG6cL.png)
+![](https://pasteboard.co/3tElZCOIvQQG.png)
+![](https://pasteboard.co/NMxqU5ZSGBwS.png)
+
+
+
 
 ## Tabla de Contenidos
 

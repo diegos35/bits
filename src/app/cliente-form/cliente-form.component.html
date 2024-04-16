@@ -1,0 +1,23 @@
+<div class="form-container">
+  <ng-container *ngIf="!editar; else editarHeader">
+    <h2>Nuevo Cliente</h2>
+  </ng-container>
+  <ng-template #editarHeader>
+    <h2>Editar Cliente</h2>
+  </ng-template>
+  <form (ngSubmit)="guardarCliente()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="cliente.nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" [(ngModel)]="cliente.direccion" required>
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" [(ngModel)]="cliente.telefono" required>
+    </div>
+    <button type="submit">Guardar</button>
+  </form>
+</div>

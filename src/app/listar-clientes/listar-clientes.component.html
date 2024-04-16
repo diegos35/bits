@@ -1,0 +1,33 @@
+<!-- <app-chunk-norris></app-chunk-norris> -->
+
+<h2>Lista de Clientes</h2>
+<div class="buscador">
+  <input type="text" [(ngModel)]="searchQuery" (input)="filterUsers()" placeholder="Buscar cliente">
+</div>
+
+
+<button class="btn-nuevo" (click)="agregarCliente()">Nuevo Cliente</button>
+
+<table class="cliente-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.nombre }}</td>
+      <td>{{ cliente.direccion }}</td>
+      <td>{{ cliente.telefono }}</td>
+      <td>
+        <button class="btn-editar" (click)="editarCliente(cliente.id)">Editar</button>
+        <button class="btn-eliminar" (click)="eliminarCliente(cliente.id)">Eliminar</button>
+        <button class="btn-detalle" (click)="verDetalleCuenta(cliente.id)">Detalle Cuenta</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

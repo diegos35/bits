@@ -1,0 +1,84 @@
+<div class="container">
+  <h2>Cuentas</h2>
+  <div class="buscador">
+    <input type="text" [(ngModel)]="searchQueryAccount"
+    placeholder="Buscar cuenta" (input)="filterAccount()">
+  </div>
+
+  <button class="btn-nuevo" (click)="agregarCuenta()">Agregar Nueva Cuenta</button>
+
+  <table class="cuenta-table">
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Saldo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cuenta of cuentas">
+        <td>
+          <input type="number" [(ngModel)]="cuenta.numero" [readonly]="!editable">
+        </td>
+        <td>{{ cuenta.saldo }}</td>
+        <td>
+          <button class="btn-editar" (click)="editarCuenta(cuenta)">Editar</button>
+          <button class="btn-eliminar" (click)="eliminarCuenta(cuenta.id)">Eliminar</button>
+          <button *ngIf="editable" class="btn-guardar" (click)="guardarCuenta(cuenta)">Guardar</button>
+          <button *ngIf="!editable" class="btn-crear-movimiento" (click)="crearMovimiento(cuenta)">Crear Movimiento</button>
+          <button *ngIf="!editable" class="btn-listar-movimiento" (click)="listarMovimiento(cuenta.id)">Listar Movimientos</button>
+        </td>
+      </tr>
+      <tr *ngIf="addAccount">
+        <td colspan="3">
+          <label for="nuevoNumero">Nuevo Número:</label>
+          <input type="number" id="nuevoNumero" name="nuevoNumero" [(ngModel)]="numeroCuenta">
+        </td>
+        <td>
+          <button  class="btn-guardar" (click)="guardarCuenta(numeroCuenta)">Guardar</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="crearMovimientoActivo" class="nuevo-movimiento-container">
+    <h3>Crear Nuevo Movimiento</h3>
+    <form (submit)="guardarMovimiento()">
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" name="tipo" [(ngModel)]="nuevoMovimiento.tipo">
+        <option value="DEBITO">Débito</option>
+        <option value="CREDITO">Crédito</option>
+      </select>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" [(ngModel)]="nuevoMovimiento.fecha">
+      <label for="valor">Valor:</label>
+      <input type="number" id="valor" name="valor" [(ngModel)]="nuevoMovimiento.valor">
+      <button type="submit">Guardar</button>
+    </form>
+  </div>
+  <table *ngIf="movimientosVisibles" class="movimientos-table">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Fecha</th>
+        <th>Valor</th>
+        <th>Numero</th>
+        <th>Saldo</th>
+        <th>Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movimiento of movimientosByCuenta">
+        <td>{{ movimiento.tipo }}</td>
+        <td>{{ movimiento.fecha | date:'short' }}</td>
+        <td>{{ movimiento.valor }}</td>
+        <td>{{ movimiento.cuenta.numero }}</td>
+        <td>{{ movimiento.cuenta.saldo }}</td>
+        <td>{{ movimiento.cuenta.cliente.nombre }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

@@ -1,0 +1,95 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.buscador {
+  margin-bottom: 10px;
+}
+
+.cuenta-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cuenta-table th, .cuenta-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.cuenta-table th {
+  background-color: #f2f2f2;
+}
+
+.btn-nuevo, .btn-editar, .btn-eliminar, .btn-guardar, .btn-crear-movimiento , .btn-listar-movimiento{
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.btn-nuevo {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-editar {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-guardar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-crear-movimiento {
+  background-color: #FFA500;
+  color: white;
+}
+
+.btn-editar:hover, .btn-guardar:hover, .btn-crear-movimiento:hover {
+  background-color: #1976D2;
+}
+
+.btn-listar-movimiento {
+  background-color: #cbed32;
+}
+
+
+
+.movimientos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.movimientos-table th, .movimientos-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.movimientos-table th {
+  background-color: #f2f2f2;
+}
+
+.movimientos-table td {
+  background-color: #fff;
+}
+
+.movimientos-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
